@@ -1,0 +1,16 @@
+METERTRACE FICTIONAL TEST BILL
+Account number: 12345678
+Bill date: 2026-07-05
+Billing period: 2026-05-01 to 2026-06-30
+Reading type: Actual
+Meter ID: TEST-100
+Previous reading: 1000
+Current reading: 1020
+Reading unit: CCF
+Usage: 20
+Unit: CCF
+Rate per CCF: $4.56
+Water charge: $91.20
+Credit applied: $120.00
+Credit reference: TEST-CR-001
+Total due: $91.20
