@@ -1,0 +1,16 @@
+dist/
+site.tar.gz
+node_modules/
+.build/
+.env
+.env.*
+.dev.vars
+*.log
+.DS_Store
+
+# Generated bundles and resident exports
+worker/index.js
+public-site/
+metertrace-case-data*.json
+metertrace-evidence-packet*.html
+metertrace-local-recovery*.json

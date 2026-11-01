@@ -1,0 +1,21 @@
+{
+  "name": "metertrace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs && bash scripts/build.sh",
+    "test": "node --test tests/*.test.*",
+    "validate": "node scripts/validate-artifact.mjs",
+    "build:pages": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^6.2.108"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
