@@ -111,9 +111,10 @@ function toast(message, error = false, undo = null) {
   if (undo) { const button = document.createElement('button'); button.className='toast-action'; button.textContent='Undo'; button.dataset.action=undo.action; if(undo.doc) button.dataset.doc=undo.doc; if(undo.id) button.dataset.id=undo.id; el.append(' ', button); }
   el.style.background = error ? "#482a30" : "#204039";
   el.style.borderColor = error ? "#80505a" : "#467267";
+  el.inert = false;
   el.classList.add("show");
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove("show"), 5500);
+  toastTimer = setTimeout(() => { el.classList.remove("show"); el.inert = true; }, 5500);
 }
 function go(tab) {
   active = tab;
