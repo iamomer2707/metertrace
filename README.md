@@ -2,7 +2,7 @@
 
 MeterTrace turns Chicago water-billing records into a reviewable evidence case: a chronology, source-page excerpts, explicit calculations, and precise questions. The cyber-futuristic interface works on desktop and narrow phone screens.
 
-Planned primary address: [MeterTrace on GitHub Pages](https://iamomer2707.github.io/metertrace/). Repository publication and Pages activation are pending; this address has not yet been verified live. The existing [MeterTrace site](https://metertrace-chicago-case-lab.peachyghat.chatgpt.site) remains available while the move is completed. See [QA.md](QA.md) for recorded checks and verification limits.
+Live website: [MeterTrace](https://iamomer2707.github.io/metertrace/). Public source: [iamomer2707/metertrace](https://github.com/iamomer2707/metertrace). The HTTPS GitHub Pages deployment is live and has been exercised with fictional evidence on a 360px mobile viewport. The previous [MeterTrace site](https://metertrace-chicago-case-lab.peachyghat.chatgpt.site) remains available for exporting cases saved at that origin. See [QA.md](QA.md) for recorded checks and verification limits.
 
 ## Run locally
 
@@ -69,7 +69,7 @@ Never put runtime secrets in the browser bundle, source repository, or case expo
 
 ## Deploy
 
-`npm run build:pages` produces the static `public-site/` directory. Asset paths and the local PDF worker work beneath `/metertrace/`. The supplied GitHub workflow runs the complete build, regression suite, and artifact validation, then uploads only `public-site/`. Enable **Settings → Pages → Build and deployment → Source: GitHub Actions** in the public `iamomer2707/metertrace` repository. The deployment job uses the `github-pages` environment and only runs for `main`, never pull requests. No API keys or personal access tokens are needed for static hosting.
+`npm run build:pages` produces the static `public-site/` directory. Asset paths and the local PDF worker work beneath `/metertrace/`. The supplied GitHub workflow runs the complete build, regression suite, and artifact validation, then uploads only `public-site/`. The public `iamomer2707/metertrace` repository uses **Settings → Pages → Build and deployment → Source: GitHub Actions**. Select the same setting if deploying your own copy. The deployment job uses the `github-pages` environment and only runs for `main`, never pull requests. No API keys or personal access tokens are needed for static hosting.
 
 Pages uses a supported meta CSP and a no-referrer meta policy. It cannot apply this project's optional Worker HTTP security headers, including `frame-ancestors`, `X-Content-Type-Options`, and `Permissions-Policy`. See [SECURITY.md](SECURITY.md) for the resulting boundaries and [README-deployment.md](README-deployment.md) for setup and migration steps.
 

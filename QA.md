@@ -4,7 +4,7 @@ Recorded November 1, 2026. This is a scenario-based engineering verification, no
 
 ## Release status
 
-GitHub Pages target: https://iamomer2707.github.io/metertrace/. Publication, Pages activation, and live verification at this address are pending. Static build preparation is complete; the existing deployment remains available during migration.
+Live primary website: https://iamomer2707.github.io/metertrace/. The [public repository](https://github.com/iamomer2707/metertrace) and [initial successful Pages workflow](https://github.com/iamomer2707/metertrace/actions/runs/41358665631) were verified on November 1, 2026. The previous deployment remains available for residents to export cases stored at that origin.
 
 Existing hosted origin: https://metertrace-chicago-case-lab.peachyghat.chatgpt.site
 
@@ -12,7 +12,7 @@ The managed host confirms successful deployment and public access. Live browser 
 
 ## Automated checks
 
-The recorded `npm test` run passed **112 tests**, with no failures, skips, or cancellations. Build and ESM deployment-artifact validation passed during release preparation. The prepared GitHub Actions workflow repeats `npm ci`, `npm run build`, `npm test`, and `npm run validate` on Node.js 24. Its build job has read-only permissions; its separate main-only deployment job receives Pages write and OIDC permissions. Pull requests do not deploy. Official action references are pinned to commit hashes verified against their official repositories on November 1, 2026.
+The recorded `npm test` run passed **112 tests**, with no failures, skips, or cancellations. Build and ESM deployment-artifact validation passed during release preparation. The GitHub Actions workflow repeats `npm ci`, `npm run build`, `npm test`, and `npm run validate` on Node.js 24. Its build job has read-only permissions; its separate main-only deployment job receives Pages write and OIDC permissions. Pull requests do not deploy. Official action references are pinned to commit hashes verified against their official repositories on November 1, 2026.
 
 | Area | Cases covered |
 | --- | --- |
@@ -23,7 +23,7 @@ The recorded `npm test` run passed **112 tests**, with no failures, skips, or ca
 | Static Pages packaging | Repository-subpath asset resolution; early meta CSP and static mode; no inline application JavaScript; local PDF worker; license and `.nojekyll` packaging; retained Worker HTML/API header behavior |
 | API and deployment | AI disabled without both required secrets; mandatory access token; origin checks; UTF-8 byte-bounded request/provider streams; schema and chronology validation; source grounding; field projection; generic failure messages; burst limits; same-origin versioned assets and defensive headers |
 
-The prior dependency audit reported no known production dependency advisories after the PDF.js patch. Advisory results describe the dependency database at audit time, not a permanent assurance.
+A fresh `npm audit --omit=dev` check on November 1, 2026 reported zero known production dependency advisories after the PDF.js patch. Advisory results describe the dependency database at audit time, not a permanent assurance.
 
 ## Browser checks performed
 
@@ -55,10 +55,21 @@ Backups intentionally omit original binary files, Trash, previous-case recovery 
 
 A pattern scan of 38 intended source files (tracked plus nonignored additions) at the time of the scan found zero matches for private-key blocks, GitHub access tokens, OpenAI secret keys, AWS access-key identifiers, Slack tokens, or credential-bearing URLs. This count excludes files added after that scan and is not a complete secret-scanner certification. Runtime credentials and resident documents must never be committed.
 
-## Live deployment verification
+## Previous-host deployment verification
 
 The audited build was deployed successfully on November 1, 2026 at https://metertrace-chicago-case-lab.peachyghat.chatgpt.site. The hosting service confirms public access. The live application was opened and exercised in the browser. Live layout checks at 360px, 768px and 1440px found no page-wide horizontal overflow; mobile search and packet download ordering worked. These are viewport checks, not physical device tests.
 
 The non-browser anonymous HTTP probe was rejected by Cloudflare with code 1010; its response was not treated as an application failure or as a passed anonymous HTTP smoke test. The host’s public policy and normal browser application were independently verified. TLS certificate validation was not bypassed. AI credentials remain unconfigured.
 
-GitHub repository publication and Pages deployment are not yet recorded as complete. The prepared source includes a combined verification/deployment workflow; no resident documents or browser case data are included. Live subpath PDF import and mobile checks at the new URL must be recorded after deployment. The Pages build uses static meta policies, not the Worker-only HTTP headers; AI extraction is unavailable. Moving between the old and new origins requires explicit backup export/restore and exact-original reattachment.
+## GitHub Pages deployment verification
+
+The public repository was published and its initial 39 source files were verified byte-for-byte against the prepared local source through the GitHub connector. The initial [successful deployment workflow](https://github.com/iamomer2707/metertrace/actions/runs/41358665631) built commit `e7e077eba5a327a434875bb11a1412f7e41fa40b` and published https://iamomer2707.github.io/metertrace/. No resident documents or browser case data are included in the repository.
+
+Anonymous HTTP checks returned HTTPS 200 for the application, JavaScript, CSS, favicon, PDF worker, and license file, with TLS certificate verification enabled. HTTP redirected to HTTPS. The live application was opened and exercised beneath the `/metertrace/` repository path.
+
+- At a 360 × 800 viewport, the dashboard, packet view, and field editor had no page-wide horizontal overflow.
+- A live fictional PDF import produced the expected one record. Reimporting the same bytes correctly added zero documents and reported one document not added.
+- A live evidence-packet download retained the expected fictional $166.40 discrepancy. All 19 internal source anchors resolved.
+- Mobile testing identified an expired notification intercepting a lower document-removal control. The correction passed all 112 tests and [the follow-up build and Pages deployment](https://github.com/iamomer2707/metertrace/actions/runs/41358942376) at commit `691bb3fe24ccd227521136e21ec6c9cc344ee002`. The live 360px recheck confirmed that an expired notification has `pointer-events: none`, the removal confirmation opens, moving to Trash excludes the document, and restoring it recovers its reviewed record. The restored document and review status survived reload.
+
+These checks use a browser viewport, not a physical mobile device. The Pages build uses static meta policies, not the Worker-only HTTP security headers; AI extraction is unavailable. Moving between the old and new origins requires explicit backup export/restore and exact-original reattachment.

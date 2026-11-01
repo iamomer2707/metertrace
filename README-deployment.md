@@ -6,7 +6,7 @@ Browser storage is not a cloud backup and is not encrypted by the application. A
 
 ## GitHub Pages
 
-The planned public address is https://iamomer2707.github.io/metertrace/. It is not recorded as live until the repository, successful deployment, and application at that URL have been verified.
+The live public address is https://iamomer2707.github.io/metertrace/. The [public repository](https://github.com/iamomer2707/metertrace), [initial successful deployment](https://github.com/iamomer2707/metertrace/actions/runs/41358665631), anonymous HTTPS response, and live application were verified on November 1, 2026. Use these steps for later deployments or your own copy:
 
 1. Publish this source in the public `iamomer2707/metertrace` repository, with `main` as its default branch.
 2. In **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source. Keep HTTPS enabled when the control is available.
