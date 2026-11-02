@@ -4,6 +4,16 @@ MeterTrace turns Chicago water-billing records into a reviewable evidence case: 
 
 Live website: [MeterTrace](https://iamomer2707.github.io/metertrace/). Public source: [iamomer2707/metertrace](https://github.com/iamomer2707/metertrace). The HTTPS GitHub Pages deployment is live and has been exercised with fictional evidence on a 360px mobile viewport. The previous [MeterTrace site](https://metertrace-chicago-case-lab.peachyghat.chatgpt.site) remains available for exporting cases saved at that origin. See [QA.md](QA.md) for recorded checks and verification limits.
 
+## Try it, share your impressions, and build with us
+
+[Try the fictional sample](https://iamomer2707.github.io/metertrace/)—no sign-in needed. What felt clear? Where did you get stuck? Were the source links and calculations easy to check? How did it work on your phone?
+
+- [Share your impressions or report a bug](https://github.com/iamomer2707/metertrace/issues/new?title=Feedback%3A%20my%20MeterTrace%20impressions). Include the screen or workflow, what you expected, what happened, and your browser/device when relevant.
+- [Star the repository](https://github.com/iamomer2707/metertrace) if it is useful or you want to follow its development.
+- [Fork MeterTrace](https://github.com/iamomer2707/metertrace/fork) to experiment or contribute an improvement. Create a branch in your fork, describe the change in a pull request, and run the build, tests, and validation commands below before submitting code.
+
+GitHub feedback is public and requires a GitHub account. Use fictional or redacted examples; never attach real bills or share account numbers, addresses, private correspondence, case backups, or evidence packets containing personal data. Check screenshots for sensitive details before sharing. There is no in-app feedback upload or automatic transmission of case data.
+
 ## Run locally
 
 Node.js 24 is recommended; the project supports Node.js 22 or newer.
