@@ -1,8 +1,24 @@
 # MeterTrace
 
-MeterTrace turns Chicago water-billing records into a reviewable evidence case: a chronology, source-page excerpts, explicit calculations, and precise questions. The cyber-futuristic interface works on desktop and narrow phone screens.
+**Browser-local evidence reconciliation for Chicago water billing.**
 
-Live website: [MeterTrace](https://iamomer2707.github.io/metertrace/). Public source: [iamomer2707/metertrace](https://github.com/iamomer2707/metertrace). The HTTPS GitHub Pages deployment is live and has been exercised with fictional evidence on a 360px mobile viewport. The previous [MeterTrace site](https://metertrace-chicago-case-lab.peachyghat.chatgpt.site) remains available for exporting cases saved at that origin. See [QA.md](QA.md) for recorded checks and verification limits.
+[Live demo](https://iamomer2707.github.io/metertrace/) · [Run locally](#run-locally) · [Architecture](#architecture) · [Verification record](QA.md)
+
+MeterTrace turns bills, meter-change records, and credit correspondence into a reviewable case: a chronology, source-page excerpts, explicit calculations, and focused clarification questions. Explore a fictional case without signing in, or review your own records locally in your browser.
+
+![MeterTrace workspace showing an entirely fictional sample case](metertrace-preview.png)
+
+## Engineering at a glance
+
+| Concern | Implementation |
+| --- | --- |
+| Traceable findings | Numbered source pages, matching quotations, and conservative checks for missing or conflicting evidence. |
+| Reconciliation | Deterministic rules and integer-cent arithmetic; AI does not perform billing calculations. |
+| Local state | IndexedDB persistence, file hashing, transactional saves, recoverable Trash, and previous-case recovery. |
+| Document workflow | Local PDF/text extraction, reviewed fields and drafts, original-file reattachment, and portable evidence packets. |
+| Delivery | Static GitHub Pages app, automated build/test/artifact validation, and a separately deployable optional extraction service. |
+
+The public GitHub Pages app has no AI endpoint or server document database. Its local import, manual review, reconciliation, and exports work without an AI provider. See [local data and exports](#local-data-and-exports) for storage and sharing boundaries.
 
 ## Try it, share your impressions, and build with us
 
@@ -102,4 +118,4 @@ A broadly available paid AI service needs authenticated per-user access, distrib
 
 ## Scope and limits
 
-No finite test suite covers every possible upload, browser, or billing history. The application has no official City rate table, automatic OCR, cloud sync, or automatic dispute submission. It is independent of the City of Chicago and does not certify bills, legal claims, or refunds. The [May 6, 2026 OIG audit](https://igchicago.org/publications/water-billing-audit/) motivates scrutiny of administrative records; it does not establish an error for an individual account. No award outcome, including Webby approval, can be guaranteed.
+No finite test suite covers every possible upload, browser, or billing history. The application has no official City rate table, automatic OCR, cloud sync, or automatic dispute submission. It is independent of the City of Chicago and does not certify bills, legal claims, or refunds. The [May 6, 2026 OIG audit](https://igchicago.org/publications/water-billing-audit/) motivates scrutiny of administrative records; it does not establish an error for an individual account.
